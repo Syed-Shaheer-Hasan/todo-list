@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo';
+  list:any[]=[];
+  addTask(items:any)
+  {
+    console.log(this.list);
+    this.list.push({id:this.list.length,name:items})
+  }
 }
