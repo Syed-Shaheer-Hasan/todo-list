@@ -1,23 +1,35 @@
-<div class="container">
+
+<app-dashboard></app-dashboard>
+
+
+
+<!-- <div class="container mt-5">
   <div class="row text-center ">
-    <div class="col-6 border shadow py-3">
-      <h1 class="text-primary">To-do List</h1>
+    <div class="col-6 border shadow py-5">
+      <h1 class="text-primary">TO-DO LIST</h1>
       <div>
-        <input class="form-control mx-auto w-50 text-center "  type="text" placeholder="Enter Your Task" #task>
+        <input class="form-control mx-auto w-50 text-center " type="text" placeholder="Enter Your Task" #task>
         <button class="mt-2 btn btn-success" (click)="addTask(task.value)">Add Task</button>
       </div>
     </div>
   </div>
   <div class="row mt-4">
-    <table>
-      <thead class="bg-primary text-white">
-        <tr>
-         <th>
-           task
-         </th>
+    <table  class="w-50 table table-bordered table-hover">
+      <thead  class="bg-dark h3 text-white text-center">
+        <tr class="border">
+          <th  scope="col">
+            Tasks
+          </th>
         </tr>
-       </thead>
+      </thead>
+      <tbody  class="bg-primary text-white">
+        <tr style="background-color:rgb(85, 140, 142);" *ngFor="let item of list">
+          <td class="d-flex text-center">
+            <span class="h3">{{item.name}}</span>
+            <button style="margin-left: auto;" (click)="removeTask(item.id)" class="btn w-0 h5 btn-danger justify-content-end"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
-</div>
-
+</div> -->
