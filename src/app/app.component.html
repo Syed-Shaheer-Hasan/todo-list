@@ -1,35 +1,38 @@
 
-<app-dashboard></app-dashboard>
 
 
-
-<!-- <div class="container mt-5">
+<div class="container mt-5">
   <div class="row text-center ">
     <div class="col-6 border shadow py-5">
       <h1 class="text-primary">TO-DO LIST</h1>
+      <form >
       <div>
-        <input class="form-control mx-auto w-50 text-center " type="text" placeholder="Enter Your Task" #task>
-        <button class="mt-2 btn btn-success" (click)="addTask(task.value)">Add Task</button>
+        <input class="form-control mx-auto w-50 text-center"  required  maxlength="20" type="text"   placeholder="Enter Your Task" #task>
+        <!-- <span *ngIf="task.invalid && task.touched">REQUIRED</span> -->
+        <button class="mt-2 btn btn-success"  (click)="addTask(task.value)">Add Task</button>
       </div>
+    </form>
     </div>
   </div>
   <div class="row mt-4">
     <table  class="w-50 table table-bordered table-hover">
-      <thead  class="bg-dark h3 text-white text-center">
+      <thead  class="bg-secondary h3 text-white text-center">
         <tr class="border">
           <th  scope="col">
-            Tasks
+            TASKS
           </th>
         </tr>
       </thead>
-      <tbody  class="bg-primary text-white">
-        <tr style="background-color:rgb(85, 140, 142);" *ngFor="let item of list">
+      <tbody>
+        <tr class="shadow" style="background-color:rgb(247, 251, 251); color: black;" *ngFor="let item of list">
           <td class="d-flex text-center">
             <span class="h3">{{item.name}}</span>
+            <!-- <input class="form-control mx-auto w-50 text-center"  maxlength="20" type="text" placeholder="Enter Your Task" #task> -->
+        <!-- <button class="mt-2 btn btn-success" (click)="addTask(task.value)">+</button> -->
             <button style="margin-left: auto;" (click)="removeTask(item.id)" class="btn w-0 h5 btn-danger justify-content-end"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-</div> -->
+</div>
