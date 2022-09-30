@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
+import { takeLast } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +9,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'todo';
   list:any[] = [];
- 
+  @ViewChild('task') inputName:any;
+
   addTask(item:any)
   {
-    this.list.push({id:this.list.length,name:item})
-    console.log(this.list);
+    this.list.push({id:this.list.length,name:item,subtask:[]})
+    this.inputName.nativeElement.value = ' ';
+    console.log(this.list); 
     localStorage.setItem("todos", JSON.stringify(this.list))
+    
   }
-  removeTask(id:number)
+  removeTask(id:any)
   {
-    this.list= this.list.filter(item=>item.id!==id)
+    console.warn(id);
+    this.list = this.list.filter(removeItem =>removeItem.id!==id)
+    localStorage.removeItem("todos");
+
   }
   constructor(){
     let localItem = localStorage.getItem("todos");

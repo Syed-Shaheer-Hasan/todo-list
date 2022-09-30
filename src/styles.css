@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background: linear-gradient(#959595, #c1c6fb);
+height: 100vh;
+}
+/* html{
+    
+    background: linear-gradient(#e66465, #9198e5);
+      
+} */
+
+.border {
+    border: 1px solid #dee2e6!important;
+    background: #f7fbfb;
+}
+th{
+    border: 1px solid black;
+    padding: 2px;
+}
+tr{
+    padding: 2px;
+}
+#th:hover{
+    background-color:rgb(234, 235, 235) !important;
+}
+
+
